@@ -86,10 +86,13 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Correct shebang lines
-        run: sed -i '1s|#!/usr/bin/env ruby.exe|#!/usr/bin/env ruby|' bin/rspec
-      - name: Grant execute permissions to bin/rspec
-        run: chmod +x bin/rspec
+      # - name: Set up Database
+      #   run: |
+      #     cp config/database.yml.example config/database.yml
+      #     bin/rails db:create
+      #     bin/rails db:migrate
+      # - name: Prepare Test Database
+      #   run: bin/rails db:test:prepare
       - name: Run tests
         env:
           RAILS_ENV: test
