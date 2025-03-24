@@ -87,14 +87,14 @@ jobs:
           bundler-cache: true
 
       - name: Correct shebang lines
-        run: sed -i '1s|#!/usr/bin/env ruby.exe|#!/usr/bin/env ruby|' bin/rails
-      - name: Grant execute permissions to bin/rails
-        run: chmod +x bin/rails
+        run: sed -i '1s|#!/usr/bin/env ruby.exe|#!/usr/bin/env ruby|' bin/rspec
+      - name: Grant execute permissions to bin/rspec
+        run: chmod +x bin/rspec
       - name: Run tests
         env:
           RAILS_ENV: test
           # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:test:prepare test test:system
+        run: bundle exec rspec
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
@@ -103,3 +103,4 @@ jobs:
           name: screenshots
           path: ${{ github.workspace }}/tmp/screenshots
           if-no-files-found: ignore
+
