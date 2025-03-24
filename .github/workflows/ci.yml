@@ -18,7 +18,8 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-
+      - name: Correct shebang lines
+        run: sed -i '1s|#!/usr/bin/env ruby.exe|#!/usr/bin/env ruby|' bin/brakeman
       - name: Grant execute permissions to bin/brakeman
         run: chmod +x bin/brakeman
       - name: Scan for common Rails security vulnerabilities using static analysis
@@ -37,6 +38,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Correct shebang lines
+        run: sed -i '1s|#!/usr/bin/env ruby.exe|#!/usr/bin/env ruby|' bin/importmap
       - name: Grant execute permissions to bin/importmap
         run: chmod +x bin/importmap
       - name: Scan for security vulnerabilities in JavaScript dependencies
@@ -54,6 +57,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Correct shebang lines
+        run: sed -i '1s|#!/usr/bin/env ruby.exe|#!/usr/bin/env ruby|' bin/rubocop
       - name: Grant execute permissions to bin/rubocop
         run: chmod +x bin/rubocop
       - name: Lint code for consistent style
@@ -81,6 +86,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Correct shebang lines
+        run: sed -i '1s|#!/usr/bin/env ruby.exe|#!/usr/bin/env ruby|' bin/rails
       - name: Grant execute permissions to bin/rails
         run: chmod +x bin/rails
       - name: Run tests
