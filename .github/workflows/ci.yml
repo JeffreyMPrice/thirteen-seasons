@@ -19,6 +19,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Grant execute permissions to bin/brakeman
+        run: chmod +x bin/brakeman
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
 
@@ -35,6 +37,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Grant execute permissions to bin/importmap
+        run: chmod +x bin/importmap
       - name: Scan for security vulnerabilities in JavaScript dependencies
         run: bin/importmap audit
 
@@ -50,6 +54,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Grant execute permissions to bin/rubocop
+        run: chmod +x bin/rubocop
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
@@ -75,6 +81,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Grant execute permissions to bin/rails
+        run: chmod +x bin/rails
       - name: Run tests
         env:
           RAILS_ENV: test
