@@ -1,0 +1,225 @@
+{
+  "RSpec": {
+    "coverage": {
+      "C:/Users/jeff/Documents/GitHub/thirteen-seasons/config/environment.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          null,
+          1
+        ],
+        "branches": {}
+      },
+      "C:/Users/jeff/Documents/GitHub/thirteen-seasons/config/application.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/jeff/Documents/GitHub/thirteen-seasons/config/boot.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1
+        ],
+        "branches": {}
+      },
+      "C:/Users/jeff/Documents/GitHub/thirteen-seasons/config/environments/test.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/jeff/Documents/GitHub/thirteen-seasons/config/initializers/assets.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/jeff/Documents/GitHub/thirteen-seasons/config/initializers/content_security_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/jeff/Documents/GitHub/thirteen-seasons/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/jeff/Documents/GitHub/thirteen-seasons/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/jeff/Documents/GitHub/thirteen-seasons/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/jeff/Documents/GitHub/thirteen-seasons/app/helpers/health_helper.rb": {
+        "lines": [
+          1,
+          null
+        ],
+        "branches": {}
+      },
+      "C:/Users/jeff/Documents/GitHub/thirteen-seasons/config/routes.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "branches": {}
+      }
+    },
+    "timestamp": 1742851501
+  }
+}
