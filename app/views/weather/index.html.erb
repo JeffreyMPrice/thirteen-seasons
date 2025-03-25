@@ -1,0 +1,20 @@
+<h1>Enter an Address</h1>
+
+<% if flash[:error].present? %>
+  <div class="error"><%= flash[:error] %></div>
+<% end %>
+
+<%= form_with url: weather_index_path, method: :get do |form| %>
+  <div>
+    <%= form.label :address, "Address:" %>
+    <%= form.text_field :address, value: @address %>
+  </div>
+  <div>
+    <%= form.submit "Get Weather" %>
+  </div>
+<% end %>
+
+<% if @address.present? %>
+  <h2>Weather for <%= @address %></h2>
+  <p><%= @weather %></p>
+<% end %>
