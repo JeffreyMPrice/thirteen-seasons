@@ -4,6 +4,15 @@ RSpec.describe WeatherController, type: :controller do
   describe "GET #index" do
     context "with address parameter" do
       it "assigns @raw_address" do
+        allow_any_instance_of(GeolocationService).to receive(:geolocate).and_return(
+          Address.new(
+            plain_text: "123 Main St",
+            latitude: 37.7749,
+            longitude: -122.4194,
+            formatted_address: "123 Main St, San Francisco, CA 94103, USA"
+          )
+        )
+
         get :index, params: { raw_address: "123 Main St" }
         expect(assigns(:raw_address)).to eq("123 Main St")
       end
