@@ -40,6 +40,9 @@ gem "thruster", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "google_maps_service_ruby", "~> 0.7.0"
+gem "dotenv-rails"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -49,10 +52,6 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
-
-  gem "rspec", "~> 3.10", require: false
-  gem "rspec-rails", "~> 7.1", require: false
-  gem "simplecov", require: false
 end
 
 group :development do
@@ -64,4 +63,9 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "rspec", "~> 3.10", require: false
+  gem "rspec-rails", "~> 7.1", require: false
+  gem "simplecov", require: false
+  gem "rails-controller-testing", "~> 1.0"
+  gem "webmock", "~> 3.25"
 end

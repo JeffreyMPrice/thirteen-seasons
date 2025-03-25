@@ -43,11 +43,15 @@ API Key to access the system. I will provide in a seperate channel the API key t
     ```bash
     bundle install
     ```
-3.  **Run the tests:**
+3.  **Set up environment variables:**
+    *   Create a `.env` file in the project root.
+    *   Copy the contents of `.env.sample` into `.env`.
+    *   Replace `YOUR_GOOGLE_MAPS_API_KEY` with your actual Google Maps API key.
+4.  **Run the tests:**
     ```bash
     bundle exec rspec
     ```
-4.  **Start the server:**
+5.  **Start the server:**
     ```bash
     rails server
     ```

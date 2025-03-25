@@ -8,7 +8,7 @@
 /.bundle
 
 # Ignore all environment files.
-/.env*
+/.env
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -32,4 +32,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
 2
+coverage/
+coverage/.last_run.json
+coverage/.resultset.json
+coverage/index.html
