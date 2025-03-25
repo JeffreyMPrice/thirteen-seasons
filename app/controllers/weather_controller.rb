@@ -7,8 +7,8 @@ class WeatherController < ApplicationController
         flash.now[:error] = "Address cannot be blank."
       else
         geolocation_service = GeolocationService.new
-        @address = geolocation_service.geolocate(@raw_address)
-        flash.now[:notice] = "Geolocation successful: #{@address.formatted_address}"
+        address = geolocation_service.geolocate(@raw_address)
+        flash.now[:notice] = "Geolocation successful: #{address.formatted_address}"
       end
     end
   end
