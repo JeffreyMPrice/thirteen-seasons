@@ -119,6 +119,8 @@ class GoogleMapsAdapter
       address.state = extract_address_component(results.first, "administrative_area_level_1")
       address.postal_code = extract_address_component(results.first, "postal_code")
       address.country = extract_address_component(results.first, "country")
+    else
+      return nil
     end
 
     address
