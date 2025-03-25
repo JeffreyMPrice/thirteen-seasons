@@ -7,7 +7,7 @@ RSpec.feature "WeatherForm", type: :feature do
     fill_in "Address:", with: "123 Main St"
     click_button "Get Weather"
 
-    expect(page).to have_content("Weather for 123 Main St")
+    expect(page).to have_content("Weather for 123 N Main St, Mt Prospect, IL 60056, USA")
   end
 
   scenario "User submits form without address" do
