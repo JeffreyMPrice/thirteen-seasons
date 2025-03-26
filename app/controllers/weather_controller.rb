@@ -8,7 +8,13 @@ class WeatherController < ApplicationController
       else
         geolocation_service = GeolocationService.new
         address = geolocation_service.geolocate(@raw_address)
-        flash.now[:notice] = "Geolocation successful: #{address.formatted_address}"
+        if address
+          weather_service = WeatherService.new
+          @weather = weather_service.current_weather(address.latitude, address.longitude)
+          flash.now[:notice] = "Geolocation successful: #{address.formatted_address}"
+        else
+          flash.now[:error] = "Geolocation failed."
+        end
       end
     end
   end

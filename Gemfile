@@ -42,6 +42,7 @@ gem "thruster", require: false
 
 gem "google_maps_service_ruby", "~> 0.7.0"
 gem "dotenv-rails"
+gem "weather_gov_api"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

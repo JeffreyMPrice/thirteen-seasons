@@ -22,3 +22,14 @@
   Latitude: <%= @address.latitude %>
   <p><%= @weather %></p>
 <% end %>
+
+<% if @weather.present? %>
+  <h2>Current Weather</h2>
+  <p>Temperature: <%= @weather.temperature %> °F</p>
+  <p>Dewpoint: <%= @weather.dewpoint %> °F</p>
+  <p>Wind Direction: <%= @weather.wind_direction %> °</p>
+  <p>Wind Speed: <%= @weather.wind_speed %> km/h</p>
+  <p>Barometric Pressure: <%= @weather.barometric_pressure %> Pa</p>
+  <p>Visibility: <%= @weather.visibility %> m</p>
+  <p>Relative Humidity: <%= @weather.relative_humidity %> %</p>
+<% end %>
