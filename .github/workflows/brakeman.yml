@@ -1,0 +1,39 @@
+name: Brakeman Security Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  brakeman:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2' # Or your Ruby version
+          bundler-cache: true
+
+      - name: Run Brakeman
+        run: bundle exec brakeman -o brakeman-report.html -w3
+
+      - name: Upload Brakeman Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: brakeman-report
+          path: brakeman-report.html
+
+      - name: Fail if warnings are found
+        if: always()
+        run: |
+          if [[ -s brakeman-report.html ]]; then
+            grep -q "Warnings Summary" brakeman-report.html && exit 1 || exit 0
+          fi
