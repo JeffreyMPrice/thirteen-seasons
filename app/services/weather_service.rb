@@ -6,4 +6,8 @@ class WeatherService
   def current_weather(latitude, longitude)
     @adapter.current_weather(latitude, longitude)
   end
+
+  def forecast(latitude, longitude)
+    @adapter.forecast(latitude, longitude)
+  end
 end
