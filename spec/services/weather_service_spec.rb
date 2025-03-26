@@ -17,7 +17,7 @@ RSpec.describe WeatherService do
     )
   end
 
-  describe "#get_current_weather" do
+  describe "#current_weather" do
     it "returns the current weather from the adapter" do
       allow(adapter).to receive(:current_weather).with(latitude, longitude).and_return(expected_weather)
 

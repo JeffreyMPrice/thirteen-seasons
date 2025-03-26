@@ -21,6 +21,30 @@ RSpec.describe WeatherController, type: :controller do
       relative_humidity: 65.848771416258,
     )
   end
+  let(:forecast_data) do
+    [
+      Forecast.new(
+        name: "Tonight",
+        start_time: "2023-10-27T18:00:00-07:00",
+        end_time: "2023-10-28T06:00:00-07:00",
+        is_daytime: false,
+        temperature: 50,
+        temperature_unit: "F",
+        short_forecast: "Mostly Clear",
+        detailed_forecast: "Mostly clear, with a low around 50."
+      ),
+      Forecast.new(
+        name: "Saturday",
+        start_time: "2023-10-28T06:00:00-07:00",
+        end_time: "2023-10-28T18:00:00-07:00",
+        is_daytime: true,
+        temperature: 65,
+        temperature_unit: "F",
+        short_forecast: "Sunny",
+        detailed_forecast: "Sunny, with a high near 65."
+      )
+    ]
+  end
   let(:weather_service) { instance_double(WeatherService) }
   let(:geolocation_service) { instance_double(GeolocationService) }
 
@@ -29,6 +53,7 @@ RSpec.describe WeatherController, type: :controller do
     allow(GeolocationService).to receive(:new).and_return(geolocation_service)
     allow(geolocation_service).to receive(:geolocate).and_return(geolocated_address)
     allow(weather_service).to receive(:current_weather).with(geolocated_address.latitude, geolocated_address.longitude).and_return(weather_data)
+    allow(weather_service).to receive(:forecast).with(geolocated_address.latitude, geolocated_address.longitude).and_return(forecast_data)
   end
 
   describe "GET #index" do
@@ -44,6 +69,7 @@ RSpec.describe WeatherController, type: :controller do
         expect(assigns(:weather).barometric_pressure).to eq(102170)
         expect(assigns(:weather).visibility).to eq(16090)
         expect(assigns(:weather).relative_humidity).to eq(65.848771416258)
+        expect(assigns(:forecast)).to eq(forecast_data)
       end
     end
 

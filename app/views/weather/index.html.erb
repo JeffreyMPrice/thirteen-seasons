@@ -33,3 +33,16 @@
   <p>Visibility: <%= @weather.visibility %> m</p>
   <p>Relative Humidity: <%= @weather.relative_humidity %> %</p>
 <% end %>
+
+<% if @forecast.present? %>
+  <h2>7-Day Forecast</h2>
+  <ul>
+    <% @forecast.each do |day| %>
+      <li>
+        <strong><%= day.name %></strong>:
+        <%= day.short_forecast %>
+        (Temperature: <%= day.temperature %> <%= day.temperature_unit %>)
+      </li>
+    <% end %>
+  </ul>
+<% end %>
