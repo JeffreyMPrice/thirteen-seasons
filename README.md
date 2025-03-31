@@ -47,6 +47,8 @@ API Key to access the system. I will provide in a seperate channel the API key t
     *   Create a `.env` file in the project root.
     *   Copy the contents of `.env.sample` into `.env`.
     *   Replace `YOUR_GOOGLE_MAPS_API_KEY` with your actual Google Maps API key.
+        - `ADMIN_EMAIL`: The email address used for API requests. Weather.gov requests this be a part of the user agent.
+        - `WEATHER_SERVICE_CACHE_TIMEOUT_MINUTES`: (Optional) The cache timeout for weather data in minutes. Defaults to 30 if not set.
 4.  **Run the tests:**
     ```bash
     bundle exec rspec
