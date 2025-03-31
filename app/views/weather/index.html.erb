@@ -8,23 +8,22 @@
 
 <%= form_with url: weather_index_path, method: :get do |form| %>
   <div>
-    <%= form.label :raw_address, "Address:" %>
-    <%= form.text_field :raw_address, value: @raw_address %>
+    <%= form.label :address, "Address:" %>
+    <%= form.text_field :address, value: @address %>
   </div>
   <div>
     <%= form.submit "Get Weather" %>
   </div>
 <% end %>
 
-<% if @address.present? %>
-  <h2>Weather for <%= @address.formatted_address %></h2>
-  Longitude: <%= @address.longitude %><br>
-  Latitude: <%= @address.latitude %>
-  <p><%= @weather %></p>
-<% end %>
+<% if @location.present? %>
+  <h2>Weather for <%= @location.formatted_address %></h2>
+  Longitude: <%= @location.longitude %><br>
+  Latitude: <%= @location.latitude %>
+<% end %>O
 
 <% if @weather.present? %>
-  <h2>Current Weather</h2>
+  <h2>Current Weather <% if @weather_from_cache %>(From Cache)<% else %>(Fresh Data)<% end %></h2>
   <p>Temperature: <%= @weather.temperature %> °F</p>
   <p>Dewpoint: <%= @weather.dewpoint %> °F</p>
   <p>Wind Direction: <%= @weather.wind_direction %> °</p>
@@ -35,7 +34,7 @@
 <% end %>
 
 <% if @forecast.present? %>
-  <h2>7-Day Forecast</h2>
+  <h2>7-Day Forecast <% if @forecast_from_cache %>(From Cache)<% else %>(Fresh Data)<% end %></h2>
   <ul>
     <% @forecast.each do |day| %>
       <li>
