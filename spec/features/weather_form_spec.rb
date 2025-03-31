@@ -7,6 +7,7 @@ RSpec.feature "WeatherForm", type: :feature do
       address: address,
       latitude: 37.7749,
       longitude: -122.4194,
+      country: 'United States',
       formatted_address: "#{address}, San Francisco, CA 94103, USA"
     )
   end

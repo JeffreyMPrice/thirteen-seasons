@@ -16,6 +16,7 @@ RSpec.describe GeolocationService do
         address: "123 Main St",
         latitude: 37.7749,
         longitude: -122.4194,
+        country: 'United States',
         formatted_address: "123 Main St, San Francisco, CA 94103, USA"
       )
       allow(adapter).to receive(:geolocate).and_return(geolocated_address)

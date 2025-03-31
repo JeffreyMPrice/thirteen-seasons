@@ -2,7 +2,7 @@ class WeatherController < ApplicationController
   def index
     @address = weather_params[:address]
 
-    if @address.empty?
+    if @address.nil? || @address.empty?
       flash.now[:error] = "Address cannot be blank."
     else
       geolocation_service = GeolocationService.new

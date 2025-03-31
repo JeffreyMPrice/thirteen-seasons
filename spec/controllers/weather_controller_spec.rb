@@ -7,6 +7,7 @@ RSpec.describe WeatherController, type: :controller do
       address: address,
       latitude: 37.7749,
       longitude: -122.4194,
+      country: 'United States',
       formatted_address: "#{address}, San Francisco, CA 94103, USA"
     )
   end
@@ -59,10 +60,10 @@ RSpec.describe WeatherController, type: :controller do
 
   describe "GET #index" do
     context "with address parameter" do
-      it "sets a flash notice message with geolocation and weather results" do
+      it "sets a flash notice message with success and weather results" do
         get :index, params: { address: "123 Main St" }
 
-        expect(flash.now[:notice]).to eq("Geolocation successful: 123 Main St, San Francisco, CA 94103, USA")
+        expect(flash.now[:notice]).to eq("Weather data successfully retrieved for 123 Main St, San Francisco, CA 94103, USA.")
         expect(assigns(:weather).temperature).to eq(46.4)
         expect(assigns(:weather).dewpoint).to eq(35.6)
         expect(assigns(:weather).wind_direction).to eq(270)
@@ -91,10 +92,10 @@ RSpec.describe WeatherController, type: :controller do
     end
 
     context "with valid address parameter" do
-      it "sets a flash notice message with geolocation results" do
+      it "sets a flash notice message with seuccess" do
         get :index, params: { address: "123 Main St" }
 
-        expect(flash.now[:notice]).to eq("Geolocation successful: 123 Main St, San Francisco, CA 94103, USA")
+        expect(flash.now[:notice]).to eq("Weather data successfully retrieved for 123 Main St, San Francisco, CA 94103, USA.")
       end
     end
   end
