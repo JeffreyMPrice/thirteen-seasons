@@ -4,9 +4,10 @@ RSpec.feature "Weather Caching", type: :feature do
   let(:address) { "123 Main St" }
   let(:geolocated_address) do
     Location.new(
-      plain_text: address,
+      address: address,
       latitude: 37.7749,
       longitude: -122.4194,
+      country: 'United States',
       formatted_address: "#{address}, San Francisco, CA 94103, USA"
     )
   end

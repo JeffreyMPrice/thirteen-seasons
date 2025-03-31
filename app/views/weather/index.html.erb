@@ -16,12 +16,6 @@
   </div>
 <% end %>
 
-<% if @location.present? %>
-  <h2>Weather for <%= @location.formatted_address %></h2>
-  Longitude: <%= @location.longitude %><br>
-  Latitude: <%= @location.latitude %>
-<% end %>O
-
 <% if @weather.present? %>
   <h2>Current Weather <% if @weather_from_cache %>(From Cache)<% else %>(Fresh Data)<% end %></h2>
   <p>Temperature: <%= @weather.temperature %> °F</p>
