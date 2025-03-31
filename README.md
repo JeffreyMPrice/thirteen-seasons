@@ -111,7 +111,7 @@ Improvements I would make for production:
 
 ### Continuous Integration
 
-GitHub Actions are configured to run tests and quality checks on every push and pull request
+GitHub Actions are configured to run tests and quality checks on every push and pull request. Details can be found in the .github directory
 * Brakeman vulnerability scanner (https://brakemanscanner.org/)
 * importmap audit scans javascript libraries for known security issues (https://github.com/rails/importmap-rails)
 * Rubocop linting for consistent code formate and best practices (https://rubocop.org/)
