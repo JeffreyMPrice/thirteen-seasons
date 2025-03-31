@@ -13,7 +13,7 @@ RSpec.describe GeolocationService do
 
     it "returns the geolocated address" do
       geolocated_address = Location.new(
-        plain_text: "123 Main St",
+        address: "123 Main St",
         latitude: 37.7749,
         longitude: -122.4194,
         formatted_address: "123 Main St, San Francisco, CA 94103, USA"

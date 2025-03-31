@@ -11,7 +11,7 @@ class GoogleMapsAdapter
   def geolocate(address)
     results = @client.geocode(address)
     if results.any?
-      location = Location.new(plain_text: address)
+      location = Location.new(address: address)
 
       geolocation = results.first[:geometry][:location]
       location.latitude = geolocation[:lat].round(4)
