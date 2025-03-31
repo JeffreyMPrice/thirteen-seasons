@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe GoogleMapsAdapter do
   let(:adapter) { GoogleMapsAdapter.new }
-  let(:address) { Address.new(plain_text: "123 Main St") }
   let(:client) { double("GoogleMapsService::Client") }
 
   before do
@@ -30,6 +29,7 @@ RSpec.describe GoogleMapsAdapter do
       allow(client).to receive(:geocode).with("123 Main St").and_return(results)
 
       result = adapter.geolocate("123 Main St")
+      expect(result).to be_a(Location)
       expect(result.latitude).to eq(37.7749)
       expect(result.longitude).to eq(-122.4194)
       expect(result.formatted_address).to eq("123 Main St, San Francisco, CA 94103, USA")

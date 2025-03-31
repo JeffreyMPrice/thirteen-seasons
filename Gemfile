@@ -69,4 +69,5 @@ group :test do
   gem "simplecov", require: false
   gem "rails-controller-testing", "~> 1.0"
   gem "webmock", "~> 3.25"
+  gem "timecop"
 end

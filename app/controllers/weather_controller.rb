@@ -1,18 +1,24 @@
 class WeatherController < ApplicationController
   def index
-    @raw_address = weather_params[:raw_address]
+    @address = weather_params[:address]
 
-    if @raw_address
-      if @raw_address.empty?
+    if @address
+      if @address.empty?
         flash.now[:error] = "Address cannot be blank."
       else
         geolocation_service = GeolocationService.new
-        address = geolocation_service.geolocate(@raw_address)
-        if address
+        @location = geolocation_service.geolocate(@address)
+        if @location
           weather_service = WeatherService.new
-          @weather = weather_service.current_weather(address.latitude, address.longitude)
-          @forecast = weather_service.forecast(address.latitude, address.longitude)
-          flash.now[:notice] = "Geolocation successful: #{address.formatted_address}"
+
+          current_weather = weather_service.current_weather(@location)
+          @weather_from_cache = current_weather[:from_cache]
+          @weather = current_weather[:weather]
+
+          forecast = weather_service.forecast(@location)
+          @forecast_from_cache = forecast[:from_cache]
+          @forecast = forecast[:forecast]
+          flash.now[:notice] = "Geolocation successful: #{@location.formatted_address}"
         else
           flash.now[:error] = "Geolocation failed."
         end
@@ -23,6 +29,6 @@ class WeatherController < ApplicationController
   private
 
   def weather_params
-    params.permit(:raw_address)
+    params.permit(:address)
   end
 end
