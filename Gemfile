@@ -65,7 +65,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "rspec", "~> 3.10", require: false
-  gem "rspec-rails", "~> 7.1", require: false
+  gem "rspec-rails", "~> 8.0", require: false
   gem "simplecov", require: false
   gem "rails-controller-testing", "~> 1.0"
   gem "webmock", "~> 3.25"
